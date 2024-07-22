@@ -1,14 +1,12 @@
 import React,{ useEffect ,useState } from 'react'
 import boy from '../Pilgrim/Boy.jpg'
-import { Link, useNavigate } from 'react-router-dom' 
-import { ToastContainer, toast } from 'react-toastify';
+import { Link } from 'react-router-dom' 
 import axios from 'axios'
 
 export const InstProfileEdit = () => {
   let id=localStorage.getItem('id')
   const [userData,setUserData]=useState('')
   const [refresh,setrefresh]=useState(false)
-  const navigate = useNavigate()
 
   useEffect(()=>{
     let fetchdata=async ()=>{
@@ -25,35 +23,23 @@ export const InstProfileEdit = () => {
     console.log(data);
   }
 
-  let handleSubmit=async (event)=>{
-    try{
-      event.preventDefault()
-      if(data.cpassword!=data.password){
-        
-        
-      }
-      else{
-        if(response){
-        setrefresh(!refresh)
-        }
-        toast.success('Success')
-    let response=await axios.put(`http://localhost:4000/pilgrim/editprofile/${id}`,data)
-    console.log(response);
-    if(response){
-      window.location.reload() 
+  let handleSubmit=(event)=>{
+    event.preventDefault()
+    if(data.cpassword!=data.password){
+
+  
     }
+    else{
+    setrefresh(!refresh)
+    let response= axios.put(`http://localhost:4000/pilgrim/editprofile/${id}`,data)
+    console.log(response);
+    window.location.reload();
     setData('')
     }
-  }
-  catch(e){
-    console.log(e)
-    toast.error( e.response.data.message || e.message)
-  }
   }
 
   return (
     <>
-    <ToastContainer/>
     <form onSubmit={handleSubmit}>
     <div
     class="max-w-2xl mx-4 sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto mt-16 bg-white shadow-xl rounded-lg text-gray-900">

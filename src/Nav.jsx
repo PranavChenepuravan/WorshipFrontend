@@ -22,8 +22,7 @@ const Nav = () => {
                         <Link to='/reginst'><li>Institution</li></Link>
                         <Link to='/regincome'><li>Income Tax</li></Link> 
                         <Link to='/regarchae'><li>Archaeology</li></Link>
-                        <Link to='/regpilgrim'><li>Pilgrim</li></Link>
-                        
+                        <Link to='/regpilgrim'><li>Pilgrim</li></Link>  
                         </div> 
                    }
 
