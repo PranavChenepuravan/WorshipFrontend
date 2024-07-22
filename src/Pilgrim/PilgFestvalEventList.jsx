@@ -24,7 +24,7 @@ export const PilgFestivalEventList = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/institution/festevents/${id}`);
+                const response = await axios.get(`https://worshipbackend.onrender.com/institution/festevents/${id}`);
                 setData(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -84,7 +84,7 @@ export const PilgFestivalEventList = () => {
                             <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <td>{item?.eventname}</td>
                                 <td>
-                                    <img src={`http://localhost:4000/uploads/${item?.photo}`} alt="" />
+                                    <img src={`https://worshipbackend.onrender.com/uploads/${item?.photo}`} alt="" />
                                 </td>
                                 <td>{item?.description}</td>
                                 <td>{item?.date}</td>

@@ -12,7 +12,7 @@ export const PilgDonation = () => {
 
   useEffect(()=>{
     let fetchdata=async ()=>{
-      let response=await axios.get(`http://localhost:4000/pilgrim/viewprofile/${id}`)
+      let response=await axios.get(`https://worshipbackend.onrender.com/pilgrim/viewprofile/${id}`)
       console.log(response.data);
       setUserData(response.data)
     }
@@ -26,7 +26,7 @@ export const PilgDonation = () => {
   // let handleSubmit=async (event)=>{
   //   event.preventDefault()
 
-  //   let response=await axios.post(`http://localhost:4000/pilgrim/pilgrimdonation`,{...data,institutionId:id,pilgrimId:pilgrimIds})
+  //   let response=await axios.post(`https://worshipbackend.onrender.com/pilgrim/pilgrimdonation`,{...data,institutionId:id,pilgrimId:pilgrimIds})
   //   console.log(response);
   // }
 
@@ -37,7 +37,7 @@ export const PilgDonation = () => {
     // Check if data.amount contains only digits
     if (/^\d+$/.test(data.amount)) {
       // If data.amount consists only of digits, proceed with the API request
-      let response = await axios.post(`http://localhost:4000/pilgrim/pilgrimdonation`, {
+      let response = await axios.post(`https://worshipbackend.onrender.com/pilgrim/pilgrimdonation`, {
         ...data,
         institutionId: id,
         pilgrimId: pilgrimIds

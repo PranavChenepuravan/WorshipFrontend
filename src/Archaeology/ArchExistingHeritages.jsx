@@ -34,10 +34,10 @@ export const ArchExistingHeritage = () => {
 
   useEffect(() => {
     let fetchData = async () => {
-      let response = await axios.get(`http://localhost:4000/pilgrim/viewprofile/${id}`);
+      let response = await axios.get(`https://worshipbackend.onrender.com/pilgrim/viewprofile/${id}`);
       setUserData(response.data);
 
-      let response1 = await axios.get(`http://localhost:4000/archaeology/archheritage/${id}`);
+      let response1 = await axios.get(`https://worshipbackend.onrender.com/archaeology/archheritage/${id}`);
       setData(response1.data);
     };
     fetchData();
@@ -52,7 +52,7 @@ export const ArchExistingHeritage = () => {
   };
 
   let handleSubmit = (statuss, newid) => {
-    let response1 = axios.put(`http://localhost:4000/archaeology/manageHeritage/${newid}`, { rating: rating, status: statuss });
+    let response1 = axios.put(`https://worshipbackend.onrender.com/archaeology/manageHeritage/${newid}`, { rating: rating, status: statuss });
     console.log(response1);
   };
 
@@ -124,7 +124,7 @@ export const ArchExistingHeritage = () => {
                 {item?.phone}
               </td>
               <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                <img src={`http://localhost:4000/uploads/${item?.photo}`} className='w-48 h-48' alt="" />
+                <img src={`https://worshipbackend.onrender.com/uploads/${item?.photo}`} className='w-48 h-48' alt="" />
               </td>
               <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 {item?.heritage}
@@ -174,7 +174,7 @@ export const ArchExistingHeritage = () => {
         {item?.phone}
       </td>
       <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-        <img src={`http://localhost:4000/uploads/${item?.photo}`} className='w-48 h-48' alt="" />
+        <img src={`https://worshipbackend.onrender.com/uploads/${item?.photo}`} className='w-48 h-48' alt="" />
       </td>
       <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
         {item?.heritage}

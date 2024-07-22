@@ -31,7 +31,7 @@ export const InstArchHeritage = () => {
     formData.append('heritage', data.heritage);
     formData.append('institutiontype', data.institutiontype);
 
-    let response=await axios.post('http://localhost:4000/institution/archheritage',formData, {
+    let response=await axios.post('https://worshipbackend.onrender.com/institution/archheritage',formData, {
       headers: {
         'Content-Type' : 'multipart/form-data'
       }

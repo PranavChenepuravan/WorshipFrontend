@@ -10,7 +10,7 @@ export const InstArchaeologyList = () => {
 
     useEffect(()=>{
         let fetchdata=async ()=>{
-            let response=await axios.get(`http://localhost:4000/institution/archaeological/${id}`)
+            let response=await axios.get(`https://worshipbackend.onrender.com/institution/archaeological/${id}`)
             console.log(response.data);
             setdata(response.data)
         }

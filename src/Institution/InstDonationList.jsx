@@ -17,10 +17,10 @@ export const InstDonationList = () => {
         const fetchData = async () => {
             try {
                 const [response, response1, response2,response5] = await Promise.all([
-                    axios.get(`http://localhost:4000/institution/donation/${id}`),
-                    axios.get(`http://localhost:4000/institution/pilgdonation3/${id}`),
-                    axios.get(`http://localhost:4000/institution/propertieinst/${id}`),
-                    axios.get(`http://localhost:4000/institution/dailyincome/${id}`)
+                    axios.get(`https://worshipbackend.onrender.com/institution/donation/${id}`),
+                    axios.get(`https://worshipbackend.onrender.com/institution/pilgdonation3/${id}`),
+                    axios.get(`https://worshipbackend.onrender.com/institution/propertieinst/${id}`),
+                    axios.get(`https://worshipbackend.onrender.com/institution/dailyincome/${id}`)
                 ]);
                 setData(response.data);
                 setData1(response1.data);
@@ -82,7 +82,7 @@ export const InstDonationList = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:4000/institution/wholedonation', postData);
+            const response = await axios.post('https://worshipbackend.onrender.com/institution/wholedonation', postData);
             console.log(response);
         } catch (error) {
             console.error('Error posting data:', error);
@@ -98,7 +98,7 @@ export const InstDonationList = () => {
 
     let handleTableSubmit=async(donid,statuss)=>{
         setRefresh(!refresh)
-        let response4=await axios.put('http://localhost:4000/institution/pilgdonation',{_id:donid,status:statuss})
+        let response4=await axios.put('https://worshipbackend.onrender.com/institution/pilgdonation',{_id:donid,status:statuss})
     }
 
 

@@ -13,7 +13,7 @@ export const AdminDonationTaxInstWise = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/admin/viewinstprofile/');
+        const response = await axios.get('https://worshipbackend.onrender.com/admin/viewinstprofile/');
         setUserData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -90,7 +90,7 @@ export const AdminDonationTaxInstWise = () => {
               <td className="px-6 py-4">{item?.email}</td>
               <td className="px-6 py-4">{item?.email}</td>
               <td className="px-6 py-4">{item?.community}</td>
-              <td className="px-6 py-4"><img src={`http://localhost:4000/uploads/${item?.photo}`} alt="" /></td>
+              <td className="px-6 py-4"><img src={`https://worshipbackend.onrender.com/uploads/${item?.photo}`} alt="" /></td>
               <td className="px-6 py-4">
                 <button type="button" className="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
                   <Link to={`/admin/admindonationtaxoneinst/${item?._id}`}>View</Link>

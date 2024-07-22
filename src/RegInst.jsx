@@ -46,7 +46,7 @@ let handleChange=(event)=>{
     formData.append('caretaker', data.caretaker);
     formData.append('userType','institution');
     
-    let response=await axios.post('http://localhost:4000/register',formData, {
+    let response=await axios.post('https://worshipbackend.onrender.com/register',formData, {
       headers: {
         'Content-Type' : 'multipart/form-data'
       }
@@ -62,7 +62,7 @@ let handleChange=(event)=>{
   let handleAnotherSubmit=async (event)=>{
     event.preventDefault()
 
-    let response1=await axios.post('http://localhost:4000/Common/properties',data)
+    let response1=await axios.post('https://worshipbackend.onrender.com/Common/properties',data)
     console.log(response1);
     
   }

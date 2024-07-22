@@ -14,7 +14,7 @@ export const IncomeTaxDonationInstWise = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/incometax/viewinstprofile/${id}`);
+        const response = await axios.get(`https://worshipbackend.onrender.com/incometax/viewinstprofile/${id}`);
         console.log(response.data);
         setUserData(response.data);
       } catch (error) {
@@ -86,7 +86,7 @@ export const IncomeTaxDonationInstWise = () => {
               <td className="px-6 py-4">{item?.institution?.community}</td>
               <td className="px-6 py-9">
                 <div className='w-28 h-20'>
-                <img src={`http://localhost:4000/uploads/${item?.institution?.photo}`} alt="" />
+                <img src={`https://worshipbackend.onrender.com/uploads/${item?.institution?.photo}`} alt="" />
                 </div>
               </td>
               <td className="px-6 py-4">

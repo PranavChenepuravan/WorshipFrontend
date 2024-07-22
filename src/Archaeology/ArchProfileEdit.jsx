@@ -13,7 +13,7 @@ export const ArchProfileEdit = () => {
 
   useEffect(()=>{
     let fetchdata=async ()=>{
-      let response=await axios.get(`http://localhost:4000/pilgrim/viewprofile/${id}`)
+      let response=await axios.get(`https://worshipbackend.onrender.com/pilgrim/viewprofile/${id}`)
       console.log(response.data);
       setUserData(response.data)
     }
@@ -34,7 +34,7 @@ export const ArchProfileEdit = () => {
       console.log("Passwords do not match");
     } else {
       try {
-        let response =await axios.put(`http://localhost:4000/pilgrim/editprofile/${id}`, data);
+        let response =await axios.put(`https://worshipbackend.onrender.com/pilgrim/editprofile/${id}`, data);
         console.log(response);
         if(response){
           toast.success('Success')
@@ -58,7 +58,7 @@ export const ArchProfileEdit = () => {
         {/* <img class="object-cover object-top w-full" src='https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt='Mountain'> */}
     </div>
     <div class="mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden">
-        <div><img src={`http://localhost:4000/uploads/${userData.photo}`} alt="" className='object-cover object-center h-32' /></div>
+        <div><img src={`https://worshipbackend.onrender.com/uploads/${userData.photo}`} alt="" className='object-cover object-center h-32' /></div>
         {/* <img class="object-cover object-center h-32" src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt='Woman looking front'> */}
     </div>
     <div className='flex flex-col pl-[15%] text-xl'>

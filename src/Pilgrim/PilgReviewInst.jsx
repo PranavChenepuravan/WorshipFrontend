@@ -24,7 +24,7 @@ export const PilgReviewInst = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/pilgrim/reviewinst');
+                const response = await axios.get('https://worshipbackend.onrender.com/pilgrim/reviewinst');
                 setData(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -62,7 +62,7 @@ export const PilgReviewInst = () => {
                         {currentItems.map(item => (
                             <div key={item._id} className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-80">
                                 <div className="relative h-56 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
-                                    <img src={`http://localhost:4000/uploads/${item.photo}`} alt="card-image" />
+                                    <img src={`https://worshipbackend.onrender.com/uploads/${item.photo}`} alt="card-image" />
                                 </div>
                                 <div className="p-6">
                                     <h5 className="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">

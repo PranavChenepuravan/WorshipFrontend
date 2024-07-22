@@ -16,7 +16,7 @@ export const PilgrimBooking = () => {
 
   useEffect(()=>{
     let fetchdata=async ()=>{
-      let response=await axios.get(`http://localhost:4000/pilgrim/viewprofile/${id}`)
+      let response=await axios.get(`https://worshipbackend.onrender.com/pilgrim/viewprofile/${id}`)
       console.log(response.data);
       setUserData(response.data)
     }
@@ -32,7 +32,7 @@ export const PilgrimBooking = () => {
   let handleSubmit=async (event)=>{
     event.preventDefault()
 
-    let response=await axios.post(`http://localhost:4000/pilgrim/booking`,{...data,institutionId:id,pilgrimId:pilgrimIds,amount:userData.visitamount,bookeddate:formattedDate})
+    let response=await axios.post(`https://worshipbackend.onrender.com/pilgrim/booking`,{...data,institutionId:id,pilgrimId:pilgrimIds,amount:userData.visitamount,bookeddate:formattedDate})
     console.log(response);
     window.location.reload()
     

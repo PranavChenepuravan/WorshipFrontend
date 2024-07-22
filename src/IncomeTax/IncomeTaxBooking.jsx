@@ -17,14 +17,14 @@ export const IncomeTaxBooking = () => {
   useEffect(() => {
     let fetchData = async () => {
       try {
-        let response = await axios.get(`http://localhost:4000/pilgrim/viewprofile/${id}`);
+        let response = await axios.get(`https://worshipbackend.onrender.com/pilgrim/viewprofile/${id}`);
         console.log(response.data);
         setUserData(response.data);
 
         let location = response.data.location;
         console.log(location);
         if (location) {
-          let response1 = await axios.get(`http://localhost:4000/incometax/booking/${location}`);
+          let response1 = await axios.get(`https://worshipbackend.onrender.com/incometax/booking/${location}`);
           console.log(response1.data, 'sda');
           setBookingData(response1.data);
         }
@@ -43,7 +43,7 @@ export const IncomeTaxBooking = () => {
 
   let handleSubmit = async (statuss, userid) => {
     setRefresh(!refresh);
-    let response2 = await axios.put(`http://localhost:4000/incometax/booking/${userid}`, { status: statuss });
+    let response2 = await axios.put(`https://worshipbackend.onrender.com/incometax/booking/${userid}`, { status: statuss });
     console.log(response2);
   };
 

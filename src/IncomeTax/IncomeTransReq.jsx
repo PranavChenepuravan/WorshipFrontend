@@ -17,14 +17,14 @@ export const IncomeTransReq = () => {
 
     useEffect(() => {
         let fetchdata = async () => {
-            let response1 = await axios.get(`http://localhost:4000/pilgrim/viewprofile/${id}`)
+            let response1 = await axios.get(`https://worshipbackend.onrender.com/pilgrim/viewprofile/${id}`)
             console.log(response1.data);
             setUserData1(response1.data)
 
             let location = response1.data.location;
             console.log(location)
             if (location) {
-                let response = await axios.get(`http://localhost:4000/admin/viewinstprofile/${location}`)
+                let response = await axios.get(`https://worshipbackend.onrender.com/admin/viewinstprofile/${location}`)
                 console.log(response.data);
                 setUserData(response.data)
             }
@@ -103,7 +103,7 @@ export const IncomeTransReq = () => {
                                     <td className="px-6 py-4">{item.email}</td>
                                     <td className="px-6 py-4">{item.email}</td>
                                     <td className="px-6 py-4">{item.community}</td>
-                                    <td className="px-6 py-9 mb-2"><div className='w-28 h-20'><img src={`http://localhost:4000/uploads/${item.photo}`} alt="" /></div></td>
+                                    <td className="px-6 py-9 mb-2"><div className='w-28 h-20'><img src={`https://worshipbackend.onrender.com/uploads/${item.photo}`} alt="" /></div></td>
                                     <div className='flex'>
                                         <button type="button" class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><Link to={`/incomelayout/incometaxinstdetailpage/${item._id}`}>View</Link></button>
                                     </div>

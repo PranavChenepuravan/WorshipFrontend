@@ -9,7 +9,7 @@ export const PilgDonationListAll = () => {
 
     useEffect(()=>{
         let fetchdata=async ()=>{
-            let response=await axios.get(`http://localhost:4000/pilgrim/pilgrimdonation/${id}`)
+            let response=await axios.get(`https://worshipbackend.onrender.com/pilgrim/pilgrimdonation/${id}`)
             console.log(response.data);
             setData(response.data)
         }

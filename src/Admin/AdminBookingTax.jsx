@@ -18,7 +18,7 @@ export const AdminBookingTax = () => {
 
     useEffect(() => {
         let fetchData = async () => {
-            let response = await axios.get('http://localhost:4000/admin/booking');
+            let response = await axios.get('https://worshipbackend.onrender.com/admin/booking');
             setBookingData(response.data);
             console.log(response);
         };
@@ -34,7 +34,7 @@ export const AdminBookingTax = () => {
     let handleSubmit = async (event) => {
         event.preventDefault();
         console.log('sad');
-        let response = await axios.put('http://localhost:4000/admin/bookingtax', data);
+        let response = await axios.put('https://worshipbackend.onrender.com/admin/bookingtax', data);
     };
 
     const pageCount = Math.ceil(bookingData.length / itemsPerPage);

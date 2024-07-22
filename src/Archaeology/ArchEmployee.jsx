@@ -25,7 +25,7 @@ export const ArchEmployee = () => {
     formData.append('location', data.location);
     formData.append('email', data.email);
     formData.append('other', data.other);
-    let response=await axios.post('http://localhost:4000/archaeology/archemployee',formData,{
+    let response=await axios.post('https://worshipbackend.onrender.com/archaeology/archemployee',formData,{
       headers: {
         'Content-Type' : 'multipart/form-data'
       }

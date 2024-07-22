@@ -29,7 +29,7 @@ export const InstFestivalEventsList = () => {
   useEffect(() => {
     let fetchData = async () => {
       try {
-        let response = await axios.get(`http://localhost:4000/institution/festevents/${id}`);
+        let response = await axios.get(`https://worshipbackend.onrender.com/institution/festevents/${id}`);
         console.log(response.data);
         setData(response.data);
       } catch (error) {
@@ -84,7 +84,7 @@ export const InstFestivalEventsList = () => {
               <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                 <td>{item?.eventname}</td>
                 <td>
-                  <img src={`http://localhost:4000/uploads/${item?.photo}`} alt="" />
+                  <img src={`https://worshipbackend.onrender.com/uploads/${item?.photo}`} alt="" />
                 </td>
                 <td>{item?.description}</td>
                 <td>{item?.date}</td>

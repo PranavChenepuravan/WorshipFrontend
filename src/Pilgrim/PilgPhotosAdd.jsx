@@ -14,7 +14,7 @@ export const PilgPhotosAdd = () => {
     useEffect(()=>{
 
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:4000/pilgrim/bookinginst`)
+            let response = await axios.get(`https://worshipbackend.onrender.com/pilgrim/bookinginst`)
             console.log(response.data);
             usersetData(response.data)
         }
@@ -40,7 +40,7 @@ export const PilgPhotosAdd = () => {
         formData.append('photo', data.photo);
         formData.append('institutionId', data.institutionId);
         formData.append('pilgrimId',id);
-        let response=await axios.post('http://localhost:4000/pilgrim/picture',formData, {
+        let response=await axios.post('https://worshipbackend.onrender.com/pilgrim/picture',formData, {
             headers : {
                 'Content-Type' : 'multipart/form-data'
             }

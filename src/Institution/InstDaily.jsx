@@ -30,7 +30,7 @@ export const InstDaily = () => {
         console.log(data);
 
         try {
-            const response = await axios.post('http://localhost:4000/institution/dailyincome', {
+            const response = await axios.post('https://worshipbackend.onrender.com/institution/dailyincome', {
                 ...data,
                 institutionId: id,
                 date: formattedDate

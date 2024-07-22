@@ -11,7 +11,7 @@ export const PilgBookingList = () => {
     useEffect(()=>{
         let fetchdata=async ()=>{
             try{
-             let response=await axios.get(`http://localhost:4000/pilgrim/booking2/${id}`)
+             let response=await axios.get(`https://worshipbackend.onrender.com/pilgrim/booking2/${id}`)
              console.log(response.data);
              setData(response.data)
             }

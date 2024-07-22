@@ -16,7 +16,7 @@ export const InstLayout = () => {
     let email=localStorage.getItem('email')
     let auth=async ()=>{
 
-      let response=await axios.post('http://localhost:4000/authenticate',{_id:id,email:email})
+      let response=await axios.post('https://worshipbackend.onrender.com/authenticate',{_id:id,email:email})
       console.log(response);
       if(response==null){
         navigate('/login')

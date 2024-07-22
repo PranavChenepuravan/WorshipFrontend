@@ -23,7 +23,7 @@ export const PilgFestivalList = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/pilgrim/festival/');
+                const response = await axios.get('https://worshipbackend.onrender.com/pilgrim/festival/');
                 setData(response.data);
                 setFilteredData(response.data);
             } catch (error) {
@@ -90,7 +90,7 @@ export const PilgFestivalList = () => {
                                 <td>{item?.festival?.festivalname}</td>
                                 <td>
                                     <img
-                                        src={`http://localhost:4000/uploads/${item.festival?.photo}`}
+                                        src={`https://worshipbackend.onrender.com/uploads/${item.festival?.photo}`}
                                         alt=""
                                     />
                                 </td>

@@ -10,7 +10,7 @@ export const InstInstructionEditing = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/institution/instructionedit/${instrId}`);
+        const response = await axios.get(`https://worshipbackend.onrender.com/institution/instructionedit/${instrId}`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -26,7 +26,7 @@ export const InstInstructionEditing = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     try {
-       axios.put(`http://localhost:4000/institution/instructionedit/${instrId}`, data);
+       axios.put(`https://worshipbackend.onrender.com/institution/instructionedit/${instrId}`, data);
       setRefresh(!refresh);
     } catch (error) {
       console.error('Error updating data:', error);

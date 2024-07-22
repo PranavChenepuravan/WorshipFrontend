@@ -14,7 +14,7 @@ export const InstFestivalList = () => {
 
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:4000/institution/festival/${id}`);
+            let response = await axios.get(`https://worshipbackend.onrender.com/institution/festival/${id}`);
             console.log(response.data);
             setData(response.data);
         };
@@ -76,7 +76,7 @@ export const InstFestivalList = () => {
                         {filteredData.map((item, index) => (
                             <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <td>{item?.festival?.festivalname}</td>
-                                <td><img src={`http://localhost:4000/uploads/${item.festival?.photo}`} alt="" /></td>
+                                <td><img src={`https://worshipbackend.onrender.com/uploads/${item.festival?.photo}`} alt="" /></td>
                                 <td>{item?.festival?.about}</td>
                                 <td>{item?.festival?.startingdate}</td>
                                 <td>{item?.festival?.endingdate}</td>

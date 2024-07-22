@@ -20,10 +20,10 @@ export const PilgReviewAdd = () => {
 
       useEffect(()=>{
         let fetchdata=async ()=>{
-          let response=await axios.get(`http://localhost:4000/pilgrim/viewreviewinstitution/${id}`)
+          let response=await axios.get(`https://worshipbackend.onrender.com/pilgrim/viewreviewinstitution/${id}`)
           console.log(response.data);
           setUserData(response.data)
-          let response1=await axios.get(`http://localhost:4000/pilgrim/viewReviews/${id}`)
+          let response1=await axios.get(`https://worshipbackend.onrender.com/pilgrim/viewReviews/${id}`)
           console.log(response1.data,'as');
           setReviews(response1.data)
         }
@@ -36,7 +36,7 @@ export const PilgReviewAdd = () => {
 
       let handleSubmit=async (event)=>{
         event.preventDefault()
-        let response=await axios.post(`http://localhost:4000/pilgrim/review`,{...data,pilgrimId:pilgrimIds,institutionId:id})
+        let response=await axios.post(`https://worshipbackend.onrender.com/pilgrim/review`,{...data,pilgrimId:pilgrimIds,institutionId:id})
         console.log(response);
         
       }

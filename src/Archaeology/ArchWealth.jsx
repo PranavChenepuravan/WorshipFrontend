@@ -20,14 +20,14 @@ export const ArchWealth = () => {
   useEffect(() => {
     let fetchData = async () => {
       try {
-        let response = await axios.get(`http://localhost:4000/pilgrim/viewprofile/${id}`);
+        let response = await axios.get(`https://worshipbackend.onrender.com/pilgrim/viewprofile/${id}`);
         setUserData(response.data);
       } catch (error) {
         console.error('Error fetching profile data:', error);
       }
 
       try {
-        let response1 = await axios.get(`http://localhost:4000/archaeology/archaeological/${id}`);
+        let response1 = await axios.get(`https://worshipbackend.onrender.com/archaeology/archaeological/${id}`);
         setData(response1.data);
       } catch (error) {
         console.error('Error fetching profile data:', error);
@@ -50,7 +50,7 @@ export const ArchWealth = () => {
       requestData.rating = rating;
     }
     try {
-      let response1 = await axios.put(`http://localhost:4000/archaeology/managearchaeology/${newid}`, requestData);
+      let response1 = await axios.put(`https://worshipbackend.onrender.com/archaeology/managearchaeology/${newid}`, requestData);
       console.log(response1);
     } catch (error) {
       console.error('Error fetching profile data:', error);

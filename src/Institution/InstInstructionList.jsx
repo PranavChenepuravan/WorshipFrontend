@@ -14,7 +14,7 @@ export const InstInstructionList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/institution/instruction/${id}`);
+        const response = await axios.get(`https://worshipbackend.onrender.com/institution/instruction/${id}`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -30,7 +30,7 @@ export const InstInstructionList = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.put(`http://localhost:4000/institution/instruction/${id}`, data);
+      await axios.put(`https://worshipbackend.onrender.com/institution/instruction/${id}`, data);
       setData(''); // Clear data after successful update if needed
       setRefresh(!refresh);
     } catch (error) {
@@ -40,7 +40,7 @@ export const InstInstructionList = () => {
 
   const handleDelete =  (instId) => {
     try {
-      const response = axios.delete(`http://localhost:4000/institution/instructiondelete/${instId}`);
+      const response = axios.delete(`https://worshipbackend.onrender.com/institution/instructiondelete/${instId}`);
       console.log(response);
       setRefresh(!refresh);
     } catch (error) {

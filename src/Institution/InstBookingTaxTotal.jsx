@@ -18,7 +18,7 @@ export const InstBookingTaxTotal = () => {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/admin/bookingtaxinst/${id}`);
+                const response = await axios.get(`https://worshipbackend.onrender.com/admin/bookingtaxinst/${id}`);
                 console.log(id,'Id came here')
                 console.log("Response Data:", response.data);
                 setBookingData(response.data);
@@ -33,7 +33,7 @@ export const InstBookingTaxTotal = () => {
                 const roundedTotalTaxSum = totalTaxSum.toFixed(2);
                 setTotalTax(roundedTotalTaxSum);
 
-                const response1 = await axios.get(`http://localhost:4000/admin/institionsbookingtax/${id}`)
+                const response1 = await axios.get(`https://worshipbackend.onrender.com/admin/institionsbookingtax/${id}`)
                 console.log("Response 1 Data", response1.data)
                 setTotdata(response1.data)
 
@@ -66,7 +66,7 @@ export const InstBookingTaxTotal = () => {
     //         return; 
     //     }
     //     console.log(taxId,'taxid')
-    //     let response=await axios.put(`http://localhost:4000/admin/institutionsbookingtax/${taxId}`,{...data,totaltax:totaltaxes,status:'rejected',date: formattedDate})
+    //     let response=await axios.put(`https://worshipbackend.onrender.com/admin/institutionsbookingtax/${taxId}`,{...data,totaltax:totaltaxes,status:'rejected',date: formattedDate})
     //     console.log(response);
         
     // }
@@ -85,7 +85,7 @@ export const InstBookingTaxTotal = () => {
             console.log(taxId, 'taxid');
       
             // Make the API request to update the tax record
-            let response = await axios.put(`http://localhost:4000/admin/institutionsbookingtax/${taxId}`, {
+            let response = await axios.put(`https://worshipbackend.onrender.com/admin/institutionsbookingtax/${taxId}`, {
               ...data,
               totaltax: totaltaxes,
               status: 'rejected',

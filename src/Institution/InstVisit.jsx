@@ -16,7 +16,7 @@ export const InstVisit = () => {
   useEffect(() => {
     let fetchData = async () => {
       try {
-        let response = await axios.get(`http://localhost:4000/institution/visitingBooking/${id}`);
+        let response = await axios.get(`https://worshipbackend.onrender.com/institution/visitingBooking/${id}`);
         console.log(response.data);
         setData(response.data);
       } catch (error) {

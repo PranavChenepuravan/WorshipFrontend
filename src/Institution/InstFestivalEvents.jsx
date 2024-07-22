@@ -15,7 +15,7 @@ export const InstFestivalEvents = () => {
 
   // useEffect(()=>{
   //   let fetchdata=async ()=>{
-  //     let response=await axios.get(`http://localhost:4000/pilgrim/viewfestforevent/${id}`)
+  //     let response=await axios.get(`https://worshipbackend.onrender.com/pilgrim/viewfestforevent/${id}`)
   //     console.log(response.data);
   //     setFesivalData(response.data)
   //   }
@@ -44,7 +44,7 @@ export const InstFestivalEvents = () => {
     formData.append('festivalId',id)
     
 
-    let response=await axios.post('http://localhost:4000/institution/festevents',formData, {
+    let response=await axios.post('https://worshipbackend.onrender.com/institution/festevents',formData, {
       headers: {
         'Content-Type' : 'multipart/form-data'
       }

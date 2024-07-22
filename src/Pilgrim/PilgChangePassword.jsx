@@ -11,7 +11,7 @@ const PilgChangePassword = () => {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/pilgrim/viewprofile/${id}`);
+        const response = await axios.get(`https://worshipbackend.onrender.com/pilgrim/viewprofile/${id}`);
         console.log(response.data);
         setUserData(response.data);
       } catch (error) {
@@ -33,7 +33,7 @@ const PilgChangePassword = () => {
       if (data.newPassword === data.confirmPassword) {
         // New password and confirm password match
         const newData = { password: data.newPassword };
-        const response = await axios.put(`http://localhost:4000/pilgrim/editprofile/${id}`, newData);
+        const response = await axios.put(`https://worshipbackend.onrender.com/pilgrim/editprofile/${id}`, newData);
         console.log(response);
         setData({ currentPassword: '', newPassword: '', confirmPassword: '' });
         setRefresh(!refresh);

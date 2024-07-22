@@ -32,7 +32,7 @@ export const InstDonation = () => {
     formData.append('other', data.other);
     formData.append('amount', data.amount);
     formData.append('category', data.category);
-    let response=await axios.post('http://localhost:4000/institution/donation',formData, {
+    let response=await axios.post('https://worshipbackend.onrender.com/institution/donation',formData, {
       headers: {
         'Content-Type' : 'multipart/form-data'
       }

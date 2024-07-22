@@ -12,11 +12,11 @@ export const PilgInstitutionHeritage = () => {
   useEffect(()=> {
     let fetchdata=async ()=>{
       
-      let resopone=await axios.get(`http://localhost:4000/institution/archheritage/${id}`)
+      let resopone=await axios.get(`https://worshipbackend.onrender.com/institution/archheritage/${id}`)
       console.log(resopone.data);
       setData(resopone.data)
 
-      let resopone1=await axios.get(`http://localhost:4000/institution/instruction/${id}`)
+      let resopone1=await axios.get(`https://worshipbackend.onrender.com/institution/instruction/${id}`)
       console.log(resopone1.data)
       setData1(resopone1.data)
     }

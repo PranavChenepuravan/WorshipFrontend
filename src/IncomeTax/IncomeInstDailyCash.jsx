@@ -23,7 +23,7 @@ export const IncomeInstDailyCash = () => {
     useEffect(()=>{
         const fetchData = async () =>{
 
-            const response = await axios.get(`http://localhost:4000/institution/dailyincome/${id}`)
+            const response = await axios.get(`https://worshipbackend.onrender.com/institution/dailyincome/${id}`)
             console.log("Donataion Response Data", response.data)
             setDailyCashData(response.data)
 

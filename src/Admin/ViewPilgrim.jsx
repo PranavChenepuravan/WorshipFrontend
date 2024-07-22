@@ -13,7 +13,7 @@ export const ViewPilgrim = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/admin/viewpilgprofile/');
+        const response = await axios.get('https://worshipbackend.onrender.com/admin/viewpilgprofile/');
         setUserData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -90,7 +90,7 @@ export const ViewPilgrim = () => {
               <td className="px-6 py-3">
               <div className="flex items-center justify-center w-20 h-28 mb-2">
                  <img
-                    src={`http://localhost:4000/uploads/${item?.photo}`}
+                    src={`https://worshipbackend.onrender.com/uploads/${item?.photo}`}
                     alt=""
                     className="w-full h-full object-cover"
                    />

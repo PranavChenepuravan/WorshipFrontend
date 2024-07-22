@@ -36,7 +36,7 @@ let handleSubmit=async (event)=>{
       formData.append('status','approved')
       formData.append('transaction','approved')
       
-      let response=await axios.post('http://localhost:4000/register',formData, {
+      let response=await axios.post('https://worshipbackend.onrender.com/register',formData, {
         headers: {
           'Content-Type' : 'multipart/form-data'
         }

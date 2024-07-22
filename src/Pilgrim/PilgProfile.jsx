@@ -13,7 +13,7 @@ export const PilgProfile = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response =await axios.get(`http://localhost:4000/pilgrim/viewprofile/${id}`);
+        const response =await axios.get(`https://worshipbackend.onrender.com/pilgrim/viewprofile/${id}`);
         console.log(response.data);
         setUserData(response.data);
       } catch (error) {
@@ -27,7 +27,7 @@ export const PilgProfile = () => {
   let handleSubmit=async (event)=>{
     event.preventDefault();
     try {
-      await axios.put(`http://localhost:4000/terminate/${id}`);
+      await axios.put(`https://worshipbackend.onrender.com/terminate/${id}`);
       setUserData('');
       setRefresh(!refresh);
       navigate('/')
@@ -50,7 +50,7 @@ export const PilgProfile = () => {
         </div>
         <div className="mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden">
           <div>
-            <img src={`http://localhost:4000/uploads/${userData.photo}`} alt="" className="object-cover object-center h-32" />
+            <img src={`https://worshipbackend.onrender.com/uploads/${userData.photo}`} alt="" className="object-cover object-center h-32" />
           </div>
           
         </div>

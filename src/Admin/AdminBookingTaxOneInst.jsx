@@ -15,7 +15,7 @@ export const AdminBookingTaxOneInst = () => {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/admin/bookingtaxinst/${id}`);
+                const response = await axios.get(`https://worshipbackend.onrender.com/admin/bookingtaxinst/${id}`);
                 console.log(id,'Id came here')
                 console.log("Response Data:", response.data);
                 setBookingData(response.data);
@@ -31,7 +31,7 @@ export const AdminBookingTaxOneInst = () => {
                 const roundedTotalTaxSum = totalTaxSum.toFixed(2);
                 setTotalTax(roundedTotalTaxSum);
 
-                const response1 = await axios.get(`http://localhost:4000/admin/institionsbookingtax/${id}`)
+                const response1 = await axios.get(`https://worshipbackend.onrender.com/admin/institionsbookingtax/${id}`)
                 console.log("Response 1 Data", response1.data)
                 setTotdata(response1.data)
 
@@ -54,7 +54,7 @@ export const AdminBookingTaxOneInst = () => {
 
     let handleSubmit=async (event)=>{
         event.preventDefault()
-        let response=await axios.post(`http://localhost:4000/admin/institionsbookingtax`,{...data,institutionId:id,totaltax:totalTax})
+        let response=await axios.post(`https://worshipbackend.onrender.com/admin/institionsbookingtax`,{...data,institutionId:id,totaltax:totalTax})
         console.log(response);
     }
 

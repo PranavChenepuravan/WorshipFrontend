@@ -13,7 +13,7 @@ export const InstDonationWholeTax = () => {
 
     useEffect(()=>{
         let fetchdata=async ()=>{
-            let response=await axios.get(`http://localhost:4000/institution/wholedonation/${id}`)
+            let response=await axios.get(`https://worshipbackend.onrender.com/institution/wholedonation/${id}`)
             console.log(response)
             setData(response.data)
         }
@@ -30,7 +30,7 @@ export const InstDonationWholeTax = () => {
             alert("Amount to pay cannot exceed the balance amount.");
             return; 
         }
-        let response=await axios.put(`http://localhost:4000/admin/institutionsdonationtax/${taxId}`,{...paydata,totaltaxes:totaltaxes,status:'rejected', payeddate : formattedDate})
+        let response=await axios.put(`https://worshipbackend.onrender.com/admin/institutionsdonationtax/${taxId}`,{...paydata,totaltaxes:totaltaxes,status:'rejected', payeddate : formattedDate})
         console.log(response);
         setrefresh(!refresh)
     }

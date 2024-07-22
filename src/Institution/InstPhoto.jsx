@@ -13,7 +13,7 @@ export const InstPhoto = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                let response = await axios.get(`http://localhost:4000/institution/picture/${id}`);
+                let response = await axios.get(`https://worshipbackend.onrender.com/institution/picture/${id}`);
                 setData(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -28,7 +28,7 @@ export const InstPhoto = () => {
 
     const handleSubmit = async (statuss, itemId) => {
         try {
-            await axios.put(`http://localhost:4000/institution/picture/${itemId}`, { status: statuss });
+            await axios.put(`https://worshipbackend.onrender.com/institution/picture/${itemId}`, { status: statuss });
             setData((prevData) =>
                 prevData.map((item) =>
                     item.photos._id === itemId ? { ...item, photos: { ...item.photos, status: statuss } } : item
@@ -68,7 +68,7 @@ export const InstPhoto = () => {
                 {currentItems.map((item, index) => (
                     <div key={index} className="h-[20%] bg-gray-100 flex items-center text-center">
                         <div className="container mx-auto p-9 bg-white max-w-sm rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300">
-                            <img src={`http://localhost:4000/uploads/${item?.photos?.photo}`} className="w-48 h-48" alt="" />
+                            <img src={`https://worshipbackend.onrender.com/uploads/${item?.photos?.photo}`} className="w-48 h-48" alt="" />
                             <span>{item?.photos?.status}</span>
                             <div className="justify-between items-center">
                                 <div>

@@ -12,7 +12,7 @@ export const InstDonationOnlineList = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/institution/pilgdonation3/${id}`);
+                const response = await axios.get(`https://worshipbackend.onrender.com/institution/pilgdonation3/${id}`);
                 setData(response.data);
             } catch (e) {
                 console.error(e);
@@ -27,7 +27,7 @@ export const InstDonationOnlineList = () => {
 
     const handleSubmit = async (statuss, itemId) => {
         setRefresh(!refresh);
-        let response = await axios.put(`http://localhost:4000/institution/pilgdonation/${itemId}`, { status: statuss });
+        let response = await axios.put(`https://worshipbackend.onrender.com/institution/pilgdonation/${itemId}`, { status: statuss });
         console.log(response);
     };
 

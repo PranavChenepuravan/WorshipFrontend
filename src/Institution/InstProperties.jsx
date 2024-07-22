@@ -18,7 +18,7 @@ export const InstProperties = () => {
   let handleSubmit=async(event)=>{
     event.preventDefault()
     setrefresh(!refresh)
-    let response=await axios.post('http://localhost:4000/institution/propertieinst',data)
+    let response=await axios.post('https://worshipbackend.onrender.com/institution/propertieinst',data)
     console.log(response);
   }
 

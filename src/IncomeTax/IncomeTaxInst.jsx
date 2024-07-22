@@ -15,10 +15,10 @@ export const IncomeTaxInst = () => {
     const fetchData = async () => {
       try {
         const id = localStorage.getItem('id');
-        const response1 = await axios.get(`http://localhost:4000/pilgrim/viewprofile/${id}`);
+        const response1 = await axios.get(`https://worshipbackend.onrender.com/pilgrim/viewprofile/${id}`);
         const location = response1.data.location;
         if (location) {
-          const response = await axios.get(`http://localhost:4000/admin/viewinstprofile2/${location}`);
+          const response = await axios.get(`https://worshipbackend.onrender.com/admin/viewinstprofile2/${location}`);
           setUserData(response.data);
           setFilteredData(response.data);
         }
@@ -97,7 +97,7 @@ export const IncomeTaxInst = () => {
               <td className="px-6 py-4">{item?.caretaker}</td>
               <td className="px-6 py-9">
                 <div className='w-28 h-20'>
-                  <img src={`http://localhost:4000/uploads/${item?.photo}`} alt="" />
+                  <img src={`https://worshipbackend.onrender.com/uploads/${item?.photo}`} alt="" />
                 </div>
               </td>
               <td className="px-6 py-4">

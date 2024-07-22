@@ -49,7 +49,7 @@ export const IncomeTaxReportDonation = () => {
 
     useEffect(()=>{
         let fetchdata=async ()=>{
-            let response=await axios.get(`http://localhost:4000/pilgrim/viewprofile/${id}`)
+            let response=await axios.get(`https://worshipbackend.onrender.com/pilgrim/viewprofile/${id}`)
             console.log(response.data);
             setUserData(response.data)
 
@@ -58,7 +58,7 @@ export const IncomeTaxReportDonation = () => {
 
             if(location)
             {
-                let response1=await axios.get(`http://localhost:4000/incometax/donation/${location}`)
+                let response1=await axios.get(`https://worshipbackend.onrender.com/incometax/donation/${location}`)
                 console.log(response1.data,'sdf')
                 setDonationData(response1.data)
             }

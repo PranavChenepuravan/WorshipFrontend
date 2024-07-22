@@ -18,7 +18,7 @@ export const AdminDonationTax = () => {
 
       useEffect(()=>{
         let fetchdata=async ()=>{
-          let response=await axios.get('http://localhost:4000/admin/wholedonation2')
+          let response=await axios.get('https://worshipbackend.onrender.com/admin/wholedonation2')
           console.log(response.data);
           setData(response.data)
 
@@ -34,7 +34,7 @@ export const AdminDonationTax = () => {
         console.log('in submit');
         event.preventDefault();
         console.log('sad');
-        let response = await axios.put('http://localhost:4000/admin/wholedonationtax', data1);
+        let response = await axios.put('https://worshipbackend.onrender.com/admin/wholedonationtax', data1);
         console.log(response);
     };
 

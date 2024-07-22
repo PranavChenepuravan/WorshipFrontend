@@ -13,7 +13,7 @@ export const InstInstruction = () => {
   let handleSubmit= (event)=>{
     event.preventDefault()
 
-    let response=axios.post('http://localhost:4000/institution/instruction',data)
+    let response=axios.post('https://worshipbackend.onrender.com/institution/instruction',data)
     console.log(response);
     window.location.reload();
   }

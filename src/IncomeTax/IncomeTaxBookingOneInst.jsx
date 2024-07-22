@@ -25,11 +25,11 @@ export const IncomeTaxBookingOneInst = () => {
         const fetchdata = async () => {
             
 
-            // let response1=await axios.get(`http://localhost:4000/admin/bookingtaxinst/${id}`)
+            // let response1=await axios.get(`https://worshipbackend.onrender.com/admin/bookingtaxinst/${id}`)
             // console.log(response1.data, 'res1');
 
 
-            const response1 = await axios.get(`http://localhost:4000/admin/institionsbookingtax/${id}`)
+            const response1 = await axios.get(`https://worshipbackend.onrender.com/admin/institionsbookingtax/${id}`)
             console.log("Response 1 Data", response1.data)
             setBookingData(response1.data)
 
@@ -48,12 +48,12 @@ export const IncomeTaxBookingOneInst = () => {
 
 
     // let handleSubmit=async (status)=>{
-    //     let response=await axios.post(`http://localhost:4000/admin/institionsbookingtax`,{...data,institutionId:id,totaltax:totalTax,status:status})
+    //     let response=await axios.post(`https://worshipbackend.onrender.com/admin/institionsbookingtax`,{...data,institutionId:id,totaltax:totalTax,status:status})
     //     console.log(response);
     // }
 
     let handleSubmit = async (status,txtid) => {
-      let response = await axios.put(`http://localhost:4000/incometax/insttotalbookingstatus/${txtid}`, { status: status });
+      let response = await axios.put(`https://worshipbackend.onrender.com/incometax/insttotalbookingstatus/${txtid}`, { status: status });
       console.log(response);
   };
 

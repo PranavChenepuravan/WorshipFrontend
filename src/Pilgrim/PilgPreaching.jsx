@@ -9,7 +9,7 @@ export const PilgPreaching = () => {
 
     useEffect(() => {
         let fetchdata = async () => {
-            let response = await axios.get(`http://localhost:4000/institution/preach/${id}`);
+            let response = await axios.get(`https://worshipbackend.onrender.com/institution/preach/${id}`);
             console.log(response.data);
             setdata(response.data);
         };

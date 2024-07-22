@@ -13,7 +13,7 @@ export const InstBookingTax = () => {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/institution/booking2/${id}`);
+        const response = await axios.get(`https://worshipbackend.onrender.com/institution/booking2/${id}`);
         console.log(response.data);
         setBookingData(response.data); // Set bookingData state with fetched data
       } catch (error) {

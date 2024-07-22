@@ -26,7 +26,7 @@ export const InstRating = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/pilgrim/viewReviews/${id}`);
+                const response = await axios.get(`https://worshipbackend.onrender.com/pilgrim/viewReviews/${id}`);
                 console.log(response.data);
                 setReviews(response.data);
             } catch (error) {

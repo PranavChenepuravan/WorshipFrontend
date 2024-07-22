@@ -25,7 +25,7 @@ export const IncomeTaxDonationOneInst = () => {
     useEffect(()=>{
         const fetchData = async () =>{
 
-            const response = await axios.get(`http://localhost:4000/incometax/wholedonation/${id}`)
+            const response = await axios.get(`https://worshipbackend.onrender.com/incometax/wholedonation/${id}`)
             console.log("Donataion Response Data", response.data)
             setWholedonationData(response.data)
 
@@ -40,7 +40,7 @@ export const IncomeTaxDonationOneInst = () => {
 
 
       let handleSubmit = async (status,txtid) => {
-        let response = await axios.put(`http://localhost:4000/incometax/wholedonationstatus/${txtid}`, {status : status })
+        let response = await axios.put(`https://worshipbackend.onrender.com/incometax/wholedonationstatus/${txtid}`, {status : status })
         console.log(response);
         
       };

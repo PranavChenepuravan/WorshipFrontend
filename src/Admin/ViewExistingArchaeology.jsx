@@ -13,7 +13,7 @@ export const ViewExistingArchaeology = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/admin/viewexistingarchprofile/');
+        const response = await axios.get('https://worshipbackend.onrender.com/admin/viewexistingarchprofile/');
         setUserData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -81,7 +81,7 @@ export const ViewExistingArchaeology = () => {
               <td className="px-6 py-4">{item?.location}</td>
               <td className="px-6 py-4">{item?.phone}</td>
               <td className="px-6 py-4">{item?.email}</td>
-              <td className="px-6 py-6"><div className='w-28 h-20'><img src={`http://localhost:4000/uploads/${item?.photo}`} alt="" /></div></td>
+              <td className="px-6 py-6"><div className='w-28 h-20'><img src={`https://worshipbackend.onrender.com/uploads/${item?.photo}`} alt="" /></div></td>
               <td className="px-6 py-4">{item?.status}</td>
               <td className="px-6 py-4">
               <Link to={`/admin/adminblockdeptdetailpage/${item?._id}`}>

@@ -11,7 +11,7 @@ export const InstArchHeritageCertified = () => {
 
   useEffect(()=>{
     let fetchdata=async ()=>{
-      let resopone=await axios.get(`http://localhost:4000/institution/archheritage/${id}`)
+      let resopone=await axios.get(`https://worshipbackend.onrender.com/institution/archheritage/${id}`)
       console.log(resopone.data);
       setData(resopone.data)     
     }
@@ -55,7 +55,7 @@ const RatingStars = ({ rating }) => {
     {data.map((item, index) => (
         <div key={index} className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <div className="flex flex-col items-center pb-4 md:pb-6">
-                <img src={`http://localhost:4000/uploads/${item?.photo}`} alt="" className="object-cover object-center h-32" />
+                <img src={`https://worshipbackend.onrender.com/uploads/${item?.photo}`} alt="" className="object-cover object-center h-32" />
                 <div className="mt-4 md:mt-6 flex flex-col px-4">
                     <div className="flex items-center mb-2">
                         <div className="font-medium mr-2">Name:</div>
